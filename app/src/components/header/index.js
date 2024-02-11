@@ -21,6 +21,7 @@ const Header = () => {
       const res = await api.put(`/user`, { availability });
       dispatch(setUser(res.data));
       toast.success("Status Updated!");
+      location.reload();
     }
   }
 

@@ -32,7 +32,7 @@ const NewList = () => {
         .filter((u) => !filter?.status || u.status === filter?.status)
         .filter((u) => !filter?.contract || u.contract === filter?.contract)
         .filter((u) => !filter?.availability || u.availability === filter?.availability)
-        .filter((u) => !filter?.search || u.name.toLowerCase().includes(filter?.search.toLowerCase())),
+        .filter((u) => !filter?.search || u.username.toLowerCase().includes(filter?.search?.toLowerCase())),
     );
   }, [users, filter]);
 
@@ -108,6 +108,7 @@ const Create = () => {
               initialValues={{}}
               onSubmit={async (values, { setSubmitting }) => {
                 try {
+                  console.log(values);
                   values.status = "active";
                   values.availability = "not available";
                   values.role = "ADMIN";
@@ -247,7 +248,7 @@ const UserCard = ({ hit, projects }) => {
       {/* infos */}
       <div className="flex flex-col flex-1 justify-between">
         <div className="flex flex-col items-center text-center my-4 space-y-1">
-          <p className="font-semibold text-lg">{hit.name}</p>
+          <p className="font-semibold text-lg">{hit.username}</p>
         </div>
       </div>
     </div>

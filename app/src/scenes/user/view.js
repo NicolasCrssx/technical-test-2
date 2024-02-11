@@ -35,7 +35,7 @@ const Detail = ({ user }) => {
     const confirm = window.confirm("Are you sure ?");
     if (!confirm) return;
     await api.remove(`/user/${user._id}`);
-    toast.success("successfully removed!");
+    toast.success("Successfully removed!");
     history.push(`/user`);
   }
 
@@ -59,9 +59,8 @@ const Detail = ({ user }) => {
                 <div className="text-[14px] text-[#212325] font-medium	">Name</div>
                 <input
                   className="projectsInput text-[14px] font-normal text-[#212325] bg-[#F9FBFD] rounded-[10px]"
-                  name="name"
-                  disabled
-                  value={values.name}
+                  name="username"
+                  value={values.username}
                   onChange={handleChange}
                 />
               </div>
@@ -132,7 +131,7 @@ const Detail = ({ user }) => {
             </div>
 
             <div className="flex  mt-2">
-              <LoadingButton className="bg-[#0560FD] text-[16px] font-medium text-[#FFFFFF] py-[12px] px-[22px] rounded-[10px]" loading={isSubmitting} onChange={handleSubmit}>
+              <LoadingButton className="bg-[#0560FD] text-[16px] font-medium text-[#FFFFFF] py-[12px] px-[22px] rounded-[10px]" loading={isSubmitting} onClick={handleSubmit}>
                 Update
               </LoadingButton>
               <button className="ml-[10px] bg-[#F43F5E] text-[16px] font-medium text-[#FFFFFF] py-[12px] px-[22px] rounded-[10px]" onClick={deleteData}>

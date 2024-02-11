@@ -27,7 +27,7 @@ export default function EditProject() {
     const confirm = window.confirm("Are you sure ?");
     if (!confirm) return;
     await api.remove(`/project/${id}`);
-    toast.success("successfully removed!");
+    toast.success("Successfully removed!");
     history.push("/projects");
   }
 
@@ -66,7 +66,7 @@ export default function EditProject() {
                   <div className="flex gap-4 flex-wrap">
                     <div className="w-full md:w-[260px] mt-2">
                       <div className="text-[14px] text-[#212325] font-medium	">Name of project</div>
-                      <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="name" disabled value={values.name} onChange={handleChange} />
+                      <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="name" value={values.name} onChange={handleChange} />
                     </div>
                     <div className="w-full md:w-[260px] mt-2">
                       <div className="text-[14px] text-[#212325] font-medium	">Lead by name</div>

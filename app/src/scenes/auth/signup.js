@@ -96,7 +96,7 @@ export default () => {
                 loading={isSubmitting}
                 type="submit"
                 color="primary">
-                Signup
+                Sign up
               </LoadingButton>
             </form>
           );

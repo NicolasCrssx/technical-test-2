@@ -6,7 +6,7 @@ const { Date } = require("mongoose");
 const MODELNAME = "user";
 
 const Schema = new mongoose.Schema({
-  name: { type: String, trim: true, unique: true },
+  username: { type: String, trim: true, unique: true },
 
   email: { type: String, trim: true },
 
